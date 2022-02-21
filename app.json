@@ -1,0 +1,37 @@
+{
+    "name": "FileSharingBot",
+    "description": "A Normal Telegram Bot Which Can Store Private Files and other users access it form shareable link.",
+    "keywords": ["Telegram","python", "bot","telethon"],
+    "repository": "https://github.com/Kaif-00z/FileSharingBot",
+    "stack": "container",
+    "env": {
+        "APP_ID": {
+            "description": "You api id, from my.telegram.org or @apiScrapperRoBot.",
+            "value": ""
+        },
+        "API_HASH": {
+            "description": "You api hash, from my.telegram.org or @apiScrapperRoBot.",
+            "value": ""
+        },
+        "BOT_TOKEN": {
+            "description": "Make a bot from @BotFather, and enter it's api token here.",
+            "value": ""
+        },
+        "STORAGE_CHANNEL": {
+            "description": "Create a private group/channel. Add @missrose_bot and your bot + make admin. Do /id. Paste that here",
+             "value": ""
+        },
+        "REDIS_URI": {
+            "description": "",
+             "value": "Redis endpoint URL, from redislabs.com"
+        },
+        "REDIS_PASSWORD": {
+            "description": "Redis endpoint password, from redislabs.com",
+             "value": ""
+        },
+        "OWNER_ID": {
+            "description": "Get ur Id Of Telegram nd Paste Here.",
+            "value": ""
+        }
+    }
+}

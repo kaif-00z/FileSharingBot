@@ -1,0 +1,3 @@
+telethon
+redis
+python-decouple
