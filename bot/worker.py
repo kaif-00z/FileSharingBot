@@ -56,7 +56,7 @@ async def get_iteams(event, _u_id):
         for x in lol:
             msg = await event.client.get_messages(Var.STORAGE_CHANNEL, ids=x)
             await event.client.send_message(event.sender_id, msg)
-            await asyncio.sleep(1.5)
+            await asyncio.sleep(0.5)
     except Exception as e:
         LOGS.info(str(e))
         return await event.reply(f"`Messages/Files not Found!`")
