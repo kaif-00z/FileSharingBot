@@ -37,7 +37,7 @@ async def _(e):
             buttons=[
                 [Button.inline("HELP", data="help")],
                 [
-                    Button.url("SOURCE CODE", url="github.com/kaif-00/"),
+                    Button.url("SOURCE CODE", url="github.com/kaif-00z/"),
                     Button.url("DEVELOPER", url="t.me/kaif_00z"),
                 ],
             ],
