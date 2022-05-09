@@ -81,17 +81,13 @@ def store_iteam(unique_id, id):
 
 def get_stored_iteam(unique_id):
     _ = eval(dB.get("STORE") or "{}")
-    if _[unique_id]:
-        try:
-            return eval(_[unique_id])
-        except BaseException:
-            return None
-    else:
-        return None
+    if _.get(unique_id):
+        return eval(_[unique_id])
+    return None
 
 
 def del_stored_iteam(unique_id):
     _ = eval(dB.get("STORE") or "{}")
-    if unique_id in _:
+    if _.get(unique_id):
         _.pop(unique_id)
         dB.set("STORE", str(_))
