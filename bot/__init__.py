@@ -15,8 +15,8 @@
 
 import asyncio
 import re
+import secrets
 import sys
-from base64 import b64encode
 from logging import INFO, basicConfig, getLogger
 from random import choices
 from string import ascii_letters, digits

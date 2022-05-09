@@ -35,11 +35,7 @@ async def gen_link(event):
             fwd = await x.forward_to(Var.STORAGE_CHANNEL)
             X.append(fwd.id)
             await x.reply("`Added`")
-    u_id = (
-        (b64encode("".join(choices(ascii_letters + digits, k=8)).encode("ascii")))
-        .decode("ascii")
-        .replace("=", "")
-    )
+    u_id = secrets.token_hex(nbytes=16).replace("=", "")
     store_iteam(u_id, X)
     link = f"https://t.me/{((await event.client.get_me()).username)}?start={u_id}"
     await event.reply(
