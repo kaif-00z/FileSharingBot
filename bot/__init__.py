@@ -15,8 +15,8 @@
 
 import asyncio
 import re
-import sys
 import secrets
+import sys
 from logging import INFO, basicConfig, getLogger
 from random import choices
 from string import ascii_letters, digits
