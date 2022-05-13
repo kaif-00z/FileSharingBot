@@ -63,7 +63,7 @@ async def _(e):
 @bot.on(events.callbackquery.CallbackQuery(data=re.compile("help")))
 async def _(e):
     await e.edit(
-        "`/genratelink` for generate link\n`/revoke <link>` for revoke the link"
+        "`/generatelink` for generate link\n`/revoke <link>` for revoke the link"
     )
 
 
