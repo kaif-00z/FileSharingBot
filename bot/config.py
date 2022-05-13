@@ -16,7 +16,6 @@
 
 from decouple import config
 
-
 class Var:
     STORAGE_CHANNEL = config("STORAGE_CHANNEL", cast=int)
     API_HASH = config("API_HASH")
@@ -25,3 +24,4 @@ class Var:
     REDIS_URI = config("REDIS_URI", default=None)
     REDIS_PASS = config("REDIS_PASSWORD", default=None)
     OWNER_ID = config("OWNER_ID", cast=int)
+    TIME_OUT = config("TIME_OUT", default=60, cast=int)
