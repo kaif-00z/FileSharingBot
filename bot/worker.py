@@ -27,14 +27,14 @@ async def gen_link(event):
             "`Now send me Files/Messages one by one. After Sending All the Files/Message do `/done` .If you want to Cancel the Process do `/cancel` .`"
         )
         while True:
-            x = await cv.get_response(timeout=60)
+            x = await cv.get_response(timeout=Var.TIME_OUT)
             if x.text.startswith("/cancel"):
                 return await x.reply("`Process Cancelled Successfully`")
             elif x.text.startswith("/done"):
                 break
             fwd = await x.forward_to(Var.STORAGE_CHANNEL)
             X.append(fwd.id)
-            await x.reply("`Added`")
+            await x.reply("`Successfully Added`")
     u_id = secrets.token_hex(nbytes=16).replace("=", "")
     store_iteam(u_id, X)
     link = f"https://t.me/{((await event.client.get_me()).username)}?start={u_id}"
