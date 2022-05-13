@@ -32,6 +32,11 @@
         "OWNER_ID": {
             "description": "Get ur Id Of Telegram nd Paste Here.",
             "value": ""
+        },
+        "TIME_OUT": {
+            "description": "If you now that this variable do so add else ignore it",
+            "value" : "",
+            "required": false
         }
     }
 }
