@@ -19,6 +19,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+
 class Var:
     STORAGE_CHANNEL = config("STORAGE_CHANNEL", cast=int)
     API_HASH = config("API_HASH")
