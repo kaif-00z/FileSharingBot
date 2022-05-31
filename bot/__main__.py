@@ -55,10 +55,23 @@ async def _(e):
 async def _(e):
     if not (is_auth(e.sender_id)):
         return
-    link = e.text.split()[1]
+    try:
+        link = e.text.split()[1]
+    except:
+        return await e.reply("`Input Not Found`")
     u_id = link.split("start=")[1]
     await revoke_link(e, u_id)
 
+@bot.on(events.NewMessage(incoming=True, pattern="/edit"))
+async def _(e):
+    if not (is_auth(e.sender_id)):
+        return
+    try:
+        link = e.text.split()[1]
+    except:
+        return await e.reply("`Input Not Found`")
+    u_id = link.split("start=")[1]
+    await edit_items(e, u_id)
 
 @bot.on(events.callbackquery.CallbackQuery(data=re.compile("help")))
 async def _(e):
