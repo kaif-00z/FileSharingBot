@@ -15,7 +15,9 @@
 
 
 from decouple import config
+from dotenv import load_dotenv
 
+load_dotenv()
 
 class Var:
     STORAGE_CHANNEL = config("STORAGE_CHANNEL", cast=int)
