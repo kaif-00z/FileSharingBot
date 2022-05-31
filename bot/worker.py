@@ -43,6 +43,7 @@ async def gen_link(event):
         link_preview=False,
     )
 
+
 async def edit_items(event, u_id):
     X = get_stored_iteam(u_id)
     async with event.client.conversation(event.sender_id) as cv:
@@ -65,6 +66,7 @@ async def edit_items(event, u_id):
         f"**Successfully Added Edits** {link}",
         link_preview=False,
     )
+
 
 async def get_iteams(event, _u_id):
     lol = get_stored_iteam(_u_id)
