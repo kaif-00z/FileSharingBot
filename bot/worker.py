@@ -43,6 +43,28 @@ async def gen_link(event):
         link_preview=False,
     )
 
+async def edit_items(event, u_id):
+    X = get_stored_iteam(u_id)
+    async with event.client.conversation(event.sender_id) as cv:
+        await cv.send_message(
+            "`Now send me Files/Messages one by one. After Sending All the Files/Message do `/done` .If you want to Cancel the Process do `/cancel` .`"
+        )
+        while True:
+            x = await cv.get_response(timeout=Var.TIME_OUT)
+            if x.text.startswith("/cancel"):
+                return await x.reply("`Process Cancelled Successfully`")
+            elif x.text.startswith("/done"):
+                break
+            fwd = await x.forward_to(Var.STORAGE_CHANNEL)
+            if fwd.id not in X:
+                X.append(fwd.id)
+            await x.reply("`Successfully Added`")
+    store_iteam(u_id, X)
+    link = f"https://t.me/{((await event.client.get_me()).username)}?start={u_id}"
+    await event.reply(
+        f"**Successfully Added Edits** {link}",
+        link_preview=False,
+    )
 
 async def get_iteams(event, _u_id):
     lol = get_stored_iteam(_u_id)
